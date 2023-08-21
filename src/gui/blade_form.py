@@ -83,6 +83,9 @@ class BladeRegistrationForm(QWidget):
                 self.update_defects_list()
                 self.defect_description_edit.clear()
                 self.reset_color()
+
+                self.has_defect_checkbox.setChecked(True)
+                self.has_defect_checkbox.setEnabled(False)
             else:
                 self.defect_description_edit.setFocus()
         else:
@@ -97,6 +100,11 @@ class BladeRegistrationForm(QWidget):
         self.defect_key_combobox.setEnabled(is_checked)
         self.defect_description_edit.setEnabled(is_checked)
         self.add_defect_button.setEnabled(is_checked)
+        
+        if self.defects:
+            self.has_defect_checkbox.setChecked(True)
+            self.has_defect_checkbox.setEnabled(False)
+
 
     def validate_defect(self, defect_key, defect_description):
         if not defect_key or not defect_description:
@@ -125,6 +133,9 @@ class BladeRegistrationForm(QWidget):
             self.defects.remove(selected_item.text())
             self.defects_list.takeItem(self.defects_list.row(selected_item))
 
+            if not self.defects:
+                self.has_defect_checkbox.setEnabled(True)
+
     def update_defects_list(self):
         self.defects_list.clear()
         for defect in self.defects:
@@ -139,6 +150,19 @@ class BladeRegistrationForm(QWidget):
         print("Lâmina registrada:", blade)
         self.defects = []
         self.update_defects_list()
+
+        # Disable the relevant UI components after blade registration
+        self.has_defect_checkbox.setEnabled(False)
+        self.defect_key_combobox.setEnabled(False)
+        self.defect_description_edit.setEnabled(False)
+        self.add_defect_button.setEnabled(False)
+
+        # Uncheck the checkbox
+        self.has_defect_checkbox.setChecked(False)
+
+        # Re-enable the checkbox if there are no defects
+        if not self.defects:
+            self.has_defect_checkbox.setEnabled(True)
 
     def parse_defects(self):
         defects_dict = {}
