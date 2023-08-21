@@ -1,3 +1,5 @@
+from PySide6 import QtGui
+from PySide6.QtGui import QPalette
 from PySide6.QtWidgets import (
     QComboBox,
     QListWidget,
@@ -58,16 +60,43 @@ class BladeRegistrationForm(QWidget):
 
     def add_defect(self):
         defect_text = self.defects_edit.text()
-        if defect_text:
+
+        if self.validate_defect(defect_text):
             self.defects.append(defect_text)
             self.update_defects_list()
             self.defects_edit.clear()
+            self.reset_color()
+        else:
+            self.defects_edit.setFocus()
+
+    def validate_defect(self, defect_text):
+        parts = defect_text.split(":")
+        if len(parts) != 2:
+            self.set_error_color()
+            return False
+        return True
+
+    def set_error_color(self):
+        palette = self.defects_edit.palette()
+        palette.setColor(QPalette.ColorRole.Base, "white")
+        palette.setColor(QPalette.ColorRole.Highlight, "red")
+        self.defects_edit.setPalette(palette)
+
+    def reset_color(self):
+        palette = self.defects_edit.palette()
+        palette.setColor(QPalette.ColorRole.Base, "white")
+        palette.setColor(
+            QPalette.ColorRole.Highlight,
+            QtGui.QColor.fromRgbF(0.188235, 0.549020, 0.776471, 1.000000),
+        )
+        self.defects_edit.setPalette(palette)
 
     def remove_defect(self):
         selected_item = self.defects_list.currentItem()
         if selected_item:
             self.defects.remove(selected_item.text())
             self.defects_list.takeItem(self.defects_list.row(selected_item))
+        self.defects_edit.setStyleSheet("")
 
     def update_defects_list(self):
         self.defects_list.clear()
