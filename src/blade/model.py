@@ -3,7 +3,7 @@ from enum import Enum
 from item.enum_meta import CustomEnumMeta
 
 
-class BladeModel(Enum, meta=CustomEnumMeta):
+class BladeModel(Enum, metaclass=CustomEnumMeta):
     CINQUENTA = None
     QUARENTA = None
     QUINZE = None

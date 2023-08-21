@@ -14,5 +14,5 @@ class Item(ABC):
         pass
 
     @abstractmethod
-    def get_defects(self) -> Dict[str, bool]:
+    def get_defects(self) -> Dict[str, str]:
         pass
