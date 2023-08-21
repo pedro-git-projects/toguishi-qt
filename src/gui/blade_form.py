@@ -100,11 +100,10 @@ class BladeRegistrationForm(QWidget):
         self.defect_key_combobox.setEnabled(is_checked)
         self.defect_description_edit.setEnabled(is_checked)
         self.add_defect_button.setEnabled(is_checked)
-        
+
         if self.defects:
             self.has_defect_checkbox.setChecked(True)
             self.has_defect_checkbox.setEnabled(False)
-
 
     def validate_defect(self, defect_key, defect_description):
         if not defect_key or not defect_description:
@@ -151,16 +150,13 @@ class BladeRegistrationForm(QWidget):
         self.defects = []
         self.update_defects_list()
 
-        # Disable the relevant UI components after blade registration
         self.has_defect_checkbox.setEnabled(False)
         self.defect_key_combobox.setEnabled(False)
         self.defect_description_edit.setEnabled(False)
         self.add_defect_button.setEnabled(False)
 
-        # Uncheck the checkbox
         self.has_defect_checkbox.setChecked(False)
 
-        # Re-enable the checkbox if there are no defects
         if not self.defects:
             self.has_defect_checkbox.setEnabled(True)
 
