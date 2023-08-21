@@ -26,8 +26,8 @@ def test_defects_repr(sample_defects):
 def test_blade_str(sample_defects):
     b = Blade(BladeBrand.WAHL, BladeModel.CINCO_F, Defects(**sample_defects))
     expected_str = (
-        "Marca: WAHL\t "
-        "Modelo: CINCO_F\t "
+        "Marca: WAHL "
+        "Modelo: CINCO_F "
         "Defeitos: defect1: description1, defect2: description2"
     )
     assert str(b) == expected_str

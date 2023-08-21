@@ -16,8 +16,8 @@ class Blade(Item):
     def __str__(self) -> str:
         defect_str = str(self._defects)
         return (
-            f"Marca: {self.brand.name}\t "
-            f"Modelo: {self.model.name}\t "
+            f"Marca: {self.brand.name} "
+            f"Modelo: {self.model.name} "
             f"Defeitos: {defect_str}"
         )
 

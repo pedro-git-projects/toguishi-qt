@@ -132,7 +132,7 @@ class CustomEnumComboBox(QComboBox):
 
     def populate(self):
         for enum_item in self.enum_class:
-            self.addItem(enum_item.name, enum_item)
+            self.addItem(str(enum_item), enum_item)
 
     def current_enum(self):
         return self.itemData(self.currentIndex())
