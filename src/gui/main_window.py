@@ -1,6 +1,7 @@
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QMainWindow, QTabWidget, QVBoxLayout, QWidget
 
 from gui.blade_form import BladeRegistrationForm
+from gui.dryer_form import DryerRegistrationForm
 
 
 class MainWindow(QMainWindow):
@@ -12,8 +13,15 @@ class MainWindow(QMainWindow):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
+        tab_widget = QTabWidget()
+
+        self.blade_form = BladeRegistrationForm()
+        self.dryer_form = DryerRegistrationForm()
+
+        tab_widget.addTab(self.blade_form, "lâminas")
+        tab_widget.addTab(self.dryer_form, "secadores")
+
         layout = QVBoxLayout()
-        self.registration_form = BladeRegistrationForm()
-        layout.addWidget(self.registration_form)
+        layout.addWidget(tab_widget)
 
         central_widget.setLayout(layout)
