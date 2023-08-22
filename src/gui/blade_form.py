@@ -16,6 +16,7 @@ from blade.model import BladeModel
 from blade.blade import Blade
 
 DEFECTS = ["cortante", "mola", "nylon", "pente", "parafusos", "soquete"]
+DEFECTS = [defect.capitalize() for defect in DEFECTS]
 
 
 class BladeRegistrationForm(QWidget):
@@ -74,7 +75,7 @@ class BladeRegistrationForm(QWidget):
 
     def add_defect(self):
         if self.has_defect_checkbox.isChecked():
-            defect_key = self.defect_key_combobox.currentText()
+            defect_key = self.defect_key_combobox.currentText().lower()
             defect_description = self.defect_description_edit.text()
 
             if self.validate_defect(defect_key, defect_description):

@@ -33,7 +33,7 @@ DEFECTS = [
     "luva do motor",
     "anel de vedação",
 ]
-
+DEFECTS = [defect.capitalize() for defect in DEFECTS]
 
 class DryerRegistrationForm(QWidget):
     def __init__(self):
@@ -91,7 +91,7 @@ class DryerRegistrationForm(QWidget):
 
     def add_defect(self):
         if self.has_defect_checkbox.isChecked():
-            defect_key = self.defect_key_combobox.currentText()
+            defect_key = self.defect_key_combobox.currentText().lower()
             defect_description = self.defect_description_edit.text()
 
             if self.validate_defect(defect_key, defect_description):
