@@ -1,18 +1,18 @@
 from typing import Dict
-from blade.brand import BladeBrand
-from blade.model import BladeModel
+from dryer.brand import DryerBrand
+from dryer.model import DryerModel
 from item.item import Item
 
 
-class Blade(Item):
-    def __init__(self, brand: BladeBrand, model: BladeModel, defects=None):
+class Dryer(Item):
+    def __init__(self, brand: DryerBrand, model: DryerModel, defects=None):
         super().__init__()
         self._brand = brand
         self._model = model
         self._defects = defects if defects else {}
 
     def __repr__(self) -> str:
-        return f"Blade({self.brand!r}, {self.model!r}, {self._defects!r})"
+        return f"Dryer({self.brand!r}, {self.model!r}, {self._defects!r})"
 
     def __str__(self) -> str:
         defect_str = str(self._defects)
