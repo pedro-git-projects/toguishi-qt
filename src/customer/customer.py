@@ -5,7 +5,7 @@ from customer.store import Store
 
 
 
-class Client:
+class Customer:
     def __init__(self, name: str, phones: List[Phone], store: Store):
         self.name = name
         self.phones = phones 
