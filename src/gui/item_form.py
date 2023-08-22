@@ -31,8 +31,6 @@ class ItemFormBase(QWidget):
         self.model_label = QLabel("Modelo:")
         self.model_combobox = CustomEnumComboBox(model_enum_class)
 
-        self.defects_label = QLabel("Defeitos:")
-
         self.has_defect_checkbox = QCheckBox("Possui defeito")
         self.has_defect_checkbox.clicked.connect(self.update_defect_ui)
 
@@ -57,7 +55,6 @@ class ItemFormBase(QWidget):
         layout.addWidget(self.model_label)
         layout.addWidget(self.model_combobox)
 
-        layout.addWidget(self.defects_label)
         layout.addWidget(self.has_defect_checkbox)
         layout.addWidget(self.defect_key_combobox)
         layout.addWidget(self.defect_description_edit)
