@@ -10,11 +10,14 @@ from PySide6.QtWidgets import (
 from customer.customer import Customer
 
 from customer.phone import Phone
+from db.db_manager import DBManager
 
 
 class CustomerRegistrationForm(QWidget):
-    def __init__(self):
+    def __init__(self, db_manager: DBManager):
         super().__init__()
+
+        self.db_manager = db_manager
 
         self.phones = []
 
@@ -80,7 +83,6 @@ class CustomerRegistrationForm(QWidget):
     def update_selected_store(self, index):
         self.selected_store = self.store_names[index]
 
-    # should save on db
     def perform_registration(self) -> Customer:
         name = self.name_edit.text()
         if self.selected_store is not None:
@@ -88,7 +90,7 @@ class CustomerRegistrationForm(QWidget):
         else:
             raise Exception("Python sucks")
         phones = self.phones
-
-        customer = Customer(name, phones, store)
-        print(customer)
+        customer = Customer(name, phones, store, self.db_manager)
+        id = customer.save()
+        print(f"customer[{id}]: {customer}")
         return customer

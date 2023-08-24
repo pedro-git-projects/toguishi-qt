@@ -2,11 +2,14 @@ from PySide6.QtWidgets import QLineEdit, QListWidget, QPushButton, QVBoxLayout, 
 
 from customer.phone import Phone
 from customer.store import Store
+from db.db_manager import DBManager
 
 
 class StoreForm(QWidget):
-    def __init__(self):
+    def __init__(self, db_manager: DBManager):
         super().__init__()
+
+        self.db_manager = db_manager
 
         self.phones = []
 
@@ -64,5 +67,6 @@ class StoreForm(QWidget):
         name = self.name_edit.text()
         address = self.address_edit.text()
         phones = self.phones
-        store = Store(name, address, phones)
-        print(store)
+        store = Store(name, address, phones, self.db_manager)
+        id = store.save()
+        print(f"loja[{id}]: {store}")

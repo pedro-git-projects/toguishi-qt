@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QMainWindow, QTabWidget, QVBoxLayout, QWidget
+from db.db_manager import DBManager
 
 from gui.blade_form import BladeRegistrationForm
 from gui.customer_form import CustomerRegistrationForm
@@ -11,6 +12,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.db_manager = DBManager()
+
         self.setWindowTitle("Sistema Toguishi")
 
         central_widget = QWidget()
@@ -20,8 +23,8 @@ class MainWindow(QMainWindow):
 
         self.blade_form = BladeRegistrationForm()
         self.dryer_form = DryerRegistrationForm()
-        self.store_form = StoreForm()
-        self.customer_form = CustomerRegistrationForm()
+        self.store_form = StoreForm(self.db_manager)
+        self.customer_form = CustomerRegistrationForm(self.db_manager)
         self.service_item_form = ServiceItemForm()
 
         tab_widget.addTab(self.blade_form, "Lâminas")
