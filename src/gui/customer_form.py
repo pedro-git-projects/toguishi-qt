@@ -10,6 +10,7 @@ from PySide6.QtWidgets import (
 from customer.customer import Customer
 
 from customer.phone import Phone
+from customer.store import Store
 from db.db_manager import DBManager
 
 
@@ -20,10 +21,6 @@ class CustomerRegistrationForm(QWidget):
         self.db_manager = db_manager
 
         self.phones = []
-
-        # only until db impl
-        self.store_names = ["Store 1", "Store 2", "Store 3"]
-
         self.selected_store = None
 
         layout = QVBoxLayout()
@@ -33,8 +30,7 @@ class CustomerRegistrationForm(QWidget):
         layout.addWidget(self.sotore_label)
 
         self.store_combo = QComboBox()
-        for store_name in self.store_names:
-            self.store_combo.addItem(store_name)
+        self.populate_store_combo()
         self.store_combo.currentIndexChanged.connect(self.update_selected_store)
         layout.addWidget(self.store_combo)
 
@@ -81,7 +77,8 @@ class CustomerRegistrationForm(QWidget):
                 self.phone_list.takeItem(self.phone_list.row(selected_item))
 
     def update_selected_store(self, index):
-        self.selected_store = self.store_names[index]
+        selected_store = self.store_combo.itemData(index)
+        print(selected_store)
 
     def perform_registration(self) -> Customer:
         name = self.name_edit.text()
@@ -94,3 +91,13 @@ class CustomerRegistrationForm(QWidget):
         id = customer.save()
         print(f"customer[{id}]: {customer}")
         return customer
+
+    def populate_store_combo(self):
+        stores = self.db_manager.get_all_stores()
+        for store in stores:
+            store_object = Store(store["name"], store["address"], [], self.db_manager)
+            self.store_combo.addItem(store["name"], userData=store_object)
+
+    def update_store_combo(self):
+        self.store_combo.clear()
+        self.populate_store_combo()

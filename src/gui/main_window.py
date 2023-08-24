@@ -28,6 +28,8 @@ class MainWindow(QMainWindow):
         self.service_item_form = ServiceItemForm(self.db_manager)
 
         self.store_form.store_saved.connect(self.service_item_form.update_store_combo)
+        self.store_form.store_saved.connect(self.customer_form.update_store_combo)
+
 
         tab_widget.addTab(self.blade_form, "Lâminas")
         tab_widget.addTab(self.dryer_form, "Secadores")
