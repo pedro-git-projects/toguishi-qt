@@ -2,6 +2,7 @@ from dryer.brand import DryerBrand
 from dryer.dryer import Dryer
 from dryer.model import DryerModel
 from gui.item_form import ItemFormBase
+from item.item import Item
 
 DEFECTS = [
     "carcaça",
@@ -28,6 +29,7 @@ class DryerRegistrationForm(ItemFormBase):
     def __init__(self):
         super().__init__(DEFECTS, DryerBrand, DryerModel)
 
-    def perform_registration(self, brand, model, defects_dict):
+    def perform_registration(self, brand, model, defects_dict) -> Item:
         dryer = Dryer(brand, model, defects_dict)
-        print("Lâmina registrada: ", dryer)
+        print(dryer)
+        return dryer

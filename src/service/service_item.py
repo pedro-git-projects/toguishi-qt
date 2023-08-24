@@ -5,7 +5,10 @@ from decimal import Decimal
 from item.item import Item
 
 
-class SeriveItem:
+# connect the other forms with ServiceItem
+# make each form return their object data in the
+# perform_registration method
+class ServiceItem:
     def __init__(
         self, category: Type[Enum], item: Item, inital_price: Decimal, discount: Decimal
     ):

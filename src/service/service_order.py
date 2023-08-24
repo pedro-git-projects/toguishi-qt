@@ -4,13 +4,13 @@ from enum import Enum
 from typing import List, Type
 from customer.customer import Customer
 
-from service.service_item import SeriveItem
+from service.service_item import ServiceItem
 
 
 class ServiceOrder:
     def __init__(
         self,
-        items: List[SeriveItem],
+        items: List[ServiceItem],
         payment_method: Type[Enum],
         discount: Decimal,
         customer: Customer,
