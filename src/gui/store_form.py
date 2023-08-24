@@ -1,3 +1,4 @@
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QLineEdit, QListWidget, QPushButton, QVBoxLayout, QWidget
 
 from customer.phone import Phone
@@ -6,6 +7,8 @@ from db.db_manager import DBManager
 
 
 class StoreForm(QWidget):
+    store_saved = Signal()
+
     def __init__(self, db_manager: DBManager):
         super().__init__()
 
@@ -70,3 +73,4 @@ class StoreForm(QWidget):
         store = Store(name, address, phones, self.db_manager)
         id = store.save()
         print(f"loja[{id}]: {store}")
+        self.store_saved.emit()

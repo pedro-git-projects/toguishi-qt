@@ -25,7 +25,9 @@ class MainWindow(QMainWindow):
         self.dryer_form = DryerRegistrationForm()
         self.store_form = StoreForm(self.db_manager)
         self.customer_form = CustomerRegistrationForm(self.db_manager)
-        self.service_item_form = ServiceItemForm()
+        self.service_item_form = ServiceItemForm(self.db_manager)
+
+        self.store_form.store_saved.connect(self.service_item_form.update_store_combo)
 
         tab_widget.addTab(self.blade_form, "Lâminas")
         tab_widget.addTab(self.dryer_form, "Secadores")
