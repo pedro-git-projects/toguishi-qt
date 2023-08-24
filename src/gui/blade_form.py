@@ -15,3 +15,9 @@ class BladeRegistrationForm(ItemFormBase):
     def perform_registration(self, brand, model, defects_dict) -> Item:
         blade = Blade(brand, model, defects_dict)
         return blade
+
+    def get_item_data(self):
+        brand = self.brand_combobox.current_enum()
+        model = self.model_combobox.current_enum()
+        defects_dict = self.parse_defects()
+        return brand, model, defects_dict
