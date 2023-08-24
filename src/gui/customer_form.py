@@ -7,6 +7,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+from customer.customer import Customer
 
 from customer.phone import Phone
 
@@ -53,6 +54,10 @@ class CustomerRegistrationForm(QWidget):
         self.phone_list = QListWidget()
         layout.addWidget(self.phone_list)
 
+        self.perform_registration_button = QPushButton("Cadastrar cliente")
+        self.perform_registration_button.clicked.connect(self.perform_registration)
+        layout.addWidget(self.perform_registration_button)
+
     def add_phone(self):
         new_phone_number = self.phone_edit.text()
         new_phone = Phone(new_phone_number)
@@ -75,5 +80,15 @@ class CustomerRegistrationForm(QWidget):
     def update_selected_store(self, index):
         self.selected_store = self.store_names[index]
 
-    def register_customer(self):
-        pass
+    # should save on db
+    def perform_registration(self) -> Customer:
+        name = self.name_edit.text()
+        if self.selected_store is not None:
+            store = self.selected_store
+        else:
+            raise Exception("Python sucks")
+        phones = self.phones
+
+        customer = Customer(name, phones, store)
+        print(customer)
+        return customer

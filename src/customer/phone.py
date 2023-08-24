@@ -14,3 +14,9 @@ class Phone:
         if isinstance(other, Phone):
             return self.number == other.number
         return False
+
+    def __str__(self):
+        return self.number
+
+    def __repr__(self):
+        return f"Phone('{self.number}')"

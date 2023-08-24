@@ -13,6 +13,8 @@ from PySide6.QtWidgets import (
     QPushButton,
 )
 
+from item.item import Item
+
 
 class ItemFormBase(QWidget):
     def __init__(
@@ -158,7 +160,7 @@ class ItemFormBase(QWidget):
     def showEvent(self, event):
         self.update_defect_ui()
 
-    def perform_registration(self, brand, model, defects):
+    def perform_registration(self, brand, model, defects) -> Item:
         raise NotImplementedError("Subclasses must implement perform_registration")
 
 
