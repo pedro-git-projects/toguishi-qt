@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QLineEdit, QListWidget, QPushButton, QVBoxLayout, QWidget
 
 from customer.phone import Phone
+from customer.store import Store
 
 
 class StoreForm(QWidget):
@@ -35,6 +36,10 @@ class StoreForm(QWidget):
         self.phone_list = QListWidget()
         layout.addWidget(self.phone_list)
 
+        self.perform_registration_button = QPushButton("Cadastrar loja")
+        self.perform_registration_button.clicked.connect(self.perform_registration)
+        layout.addWidget(self.perform_registration_button)
+
     def add_phone(self):
         new_phone_number = self.phone_edit.text()
         new_phone = Phone(new_phone_number)
@@ -53,3 +58,11 @@ class StoreForm(QWidget):
             if selected_phone in self.phones:
                 self.phones.remove(selected_phone)
                 self.phone_list.takeItem(self.phone_list.row(selected_item))
+
+    # should save on db
+    def perform_registration(self):
+        name = self.name_edit.text()
+        address = self.address_edit.text()
+        phones = self.phones
+        store = Store(name, address, phones)
+        print(store)

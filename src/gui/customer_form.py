@@ -80,6 +80,7 @@ class CustomerRegistrationForm(QWidget):
     def update_selected_store(self, index):
         self.selected_store = self.store_names[index]
 
+    # should save on db
     def perform_registration(self) -> Customer:
         name = self.name_edit.text()
         if self.selected_store is not None:
