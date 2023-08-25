@@ -65,12 +65,13 @@ class StoreForm(QWidget):
                 self.phones.remove(selected_phone)
                 self.phone_list.takeItem(self.phone_list.row(selected_item))
 
-    # should save on db
     def perform_registration(self):
         name = self.name_edit.text()
         address = self.address_edit.text()
         phones = self.phones
+        print("StoreForm1::", phones)  # Add this line to check the phones before saving
         store = Store(name, address, phones, self.db_manager)
+        print("StoreForm2::", phones)  # Add this line to check the phones before saving
         id = store.save()
         print(f"loja[{id}]: {store}")
         self.store_saved.emit()

@@ -30,6 +30,16 @@ class DBManager:
         """
         )
 
+        self.cursor.execute(
+            """CREATE TABLE IF NOT EXISTS phones ( 
+                 id INTEGER PRIMARY KEY, 
+                 store_id INTEGER, 
+                 phone_number TEXT, 
+                 FOREIGN KEY (store_id) REFERENCES stores (id)
+            )
+        """
+        )
+
         self.connection.commit()
 
     def insert_customer(self, customer):
@@ -44,6 +54,13 @@ class DBManager:
             (store.name, store.address),
         )
         store_id = self.cursor.lastrowid
+
+        for phone in store.phones:
+            self.cursor.execute(
+                "INSERT INTO phones (store_id, phone_number) VALUES (?, ?)",
+                (store_id, phone.number),
+            )
+
         self.connection.commit()
         return store_id
 
@@ -55,7 +72,22 @@ class DBManager:
     def get_all_stores(self):
         self.cursor.execute("SELECT * FROM stores")
         stores = self.cursor.fetchall()
-        return stores
+
+        stores_with_phones = []
+        for store_row in stores:
+            store = dict(store_row)
+            store_id = store["id"]
+            store["phones"] = self.get_phones_for_store(store_id)
+            stores_with_phones.append(store)
+
+        return stores_with_phones
+
+    def get_phones_for_store(self, store_id):
+        self.cursor.execute(
+            "SELECT phone_number FROM phones WHERE store_id = ?", (store_id,)
+        )
+        phones = self.cursor.fetchall()
+        return [phone["phone_number"] for phone in phones]
 
     def get_store_by_name(self, store_name):
         self.cursor.execute("SELECT * FROM stores WHERE name = ?", (store_name,))

@@ -118,12 +118,14 @@ class ServiceItemForm(QWidget):
     def populate_store_combo(self):
         stores = self.db_manager.get_all_stores()
         for store in stores:
-            store_object = Store(store["name"], store["address"], [], self.db_manager)
+            store_object = Store(
+                store["name"], store["address"], store["phones"], self.db_manager
+            )
             self.store_combo.addItem(store["name"], userData=store_object)
 
     def update_selected_store(self, index):
         selected_store = self.store_combo.itemData(index)
-        print(selected_store)
+        print("ServiceItem::", selected_store)
 
     def update_store_combo(self):
         self.store_combo.clear()

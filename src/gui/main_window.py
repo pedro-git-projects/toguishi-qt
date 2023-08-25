@@ -1,9 +1,7 @@
 from PySide6.QtWidgets import QMainWindow, QTabWidget, QVBoxLayout, QWidget
 from db.db_manager import DBManager
 
-from gui.blade_form import BladeRegistrationForm
 from gui.customer_form import CustomerRegistrationForm
-from gui.dryer_form import DryerRegistrationForm
 from gui.service_item_form import ServiceItemForm
 from gui.store_form import StoreForm
 
