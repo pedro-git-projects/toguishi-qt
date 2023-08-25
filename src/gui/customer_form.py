@@ -78,6 +78,7 @@ class CustomerRegistrationForm(QWidget):
 
     def update_selected_store(self, index):
         selected_store = self.store_combo.itemData(index)
+        self.selected_store = selected_store
         print("custumer form::", selected_store)
 
     def perform_registration(self) -> Customer:
@@ -85,7 +86,7 @@ class CustomerRegistrationForm(QWidget):
         if self.selected_store is not None:
             store = self.selected_store
         else:
-            raise Exception("Python sucks")
+            raise Exception("Selected store is nil")
         phones = self.phones
         customer = Customer(name, phones, store, self.db_manager)
         id = customer.save()
@@ -97,7 +98,7 @@ class CustomerRegistrationForm(QWidget):
         for store in stores:
             store_object = Store(
                 store["name"], store["address"], store["phones"], self.db_manager
-            )  # Use store["phones"]
+            )
             self.store_combo.addItem(store["name"], userData=store_object)
 
     def update_store_combo(self):

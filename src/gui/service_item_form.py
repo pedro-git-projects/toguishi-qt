@@ -113,7 +113,6 @@ class ServiceItemForm(QWidget):
     def update_selected_category(self):
         selected_index = self.category_combo.currentIndex()
         selected_category = Category(selected_index + 1)
-        # Do something with selected_category
 
     def populate_store_combo(self):
         stores = self.db_manager.get_all_stores()
