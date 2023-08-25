@@ -1,12 +1,18 @@
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QLineEdit, QListWidget, QPushButton, QVBoxLayout, QWidget
 
 from customer.phone import Phone
 from customer.store import Store
+from db.db_manager import DBManager
 
 
 class StoreForm(QWidget):
-    def __init__(self):
+    store_saved = Signal()
+
+    def __init__(self, db_manager: DBManager):
         super().__init__()
+
+        self.db_manager = db_manager
 
         self.phones = []
 
@@ -59,10 +65,13 @@ class StoreForm(QWidget):
                 self.phones.remove(selected_phone)
                 self.phone_list.takeItem(self.phone_list.row(selected_item))
 
-    # should save on db
     def perform_registration(self):
         name = self.name_edit.text()
         address = self.address_edit.text()
         phones = self.phones
-        store = Store(name, address, phones)
-        print(store)
+        print("StoreForm1::", phones)  # Add this line to check the phones before saving
+        store = Store(name, address, phones, self.db_manager)
+        print("StoreForm2::", phones)  # Add this line to check the phones before saving
+        id = store.save()
+        print(f"loja[{id}]: {store}")
+        self.store_saved.emit()
