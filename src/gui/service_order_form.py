@@ -10,16 +10,16 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from customer.store import Store
 from db.db_manager import DBManager
 from gui.blade_form import BladeRegistrationForm
 from gui.dryer_form import DryerRegistrationForm
-from gui.scissors_form import ScissorsRegistrationForm
 
 from service.category import Category
 from service.payment import Payment
 
 
-class ServiceItemForm(QWidget):
+class ServiceOrderForm(QWidget):
     def __init__(self, db_manager: DBManager):
         super().__init__()
         self.db_manager = db_manager
@@ -30,11 +30,21 @@ class ServiceItemForm(QWidget):
         layout = QVBoxLayout()
         self.setLayout(layout)
 
-        self.setup_item_type_section(layout)
-        self.setup_stacked_widget(layout)
+        self.setup_store_section(layout)
         self.setup_category_section(layout)
         self.setup_price_section(layout)
         self.setup_payment_section(layout)
+        self.setup_item_type_section(layout)
+        self.setup_stacked_widget(layout)
+
+    def setup_store_section(self, layout):
+        self.store_label = QLabel("Loja:")
+        self.store_combo = QComboBox()
+        self.store_combo.currentIndexChanged.connect(self.update_selected_store)
+        self.populate_store_combo()
+
+        layout.addWidget(self.store_label)
+        layout.addWidget(self.store_combo)
 
     def setup_category_section(self, layout):
         self.category_label = QLabel("Categoria:")
@@ -95,10 +105,8 @@ class ServiceItemForm(QWidget):
         self.stacked_widget = QStackedWidget()
         self.dryer_form = DryerRegistrationForm()
         self.blade_form = BladeRegistrationForm()
-        self.scissors_form = ScissorsRegistrationForm()
         self.stacked_widget.addWidget(self.dryer_form)
         self.stacked_widget.addWidget(self.blade_form)
-        self.stacked_widget.addWidget(self.scissors_form)
 
         layout.addWidget(self.stacked_widget)
 
@@ -106,13 +114,27 @@ class ServiceItemForm(QWidget):
         selected_index = self.category_combo.currentIndex()
         selected_category = Category(selected_index + 1)
 
+    def populate_store_combo(self):
+        stores = self.db_manager.get_all_stores()
+        for store in stores:
+            store_object = Store(
+                store["name"], store["address"], store["phones"], self.db_manager
+            )
+            self.store_combo.addItem(store["name"], userData=store_object)
+
+    def update_selected_store(self, index):
+        selected_store = self.store_combo.itemData(index)
+        print("ServiceItem::", selected_store)
+
+    def update_store_combo(self):
+        self.store_combo.clear()
+        self.populate_store_combo()
+
     def update_selected_item_type(self, button):
         if button == self.dryer_radio:
             self.stacked_widget.setCurrentWidget(self.dryer_form)
         elif button == self.blade_radio:
             self.stacked_widget.setCurrentWidget(self.blade_form)
-        elif button == self.scissors_radio:
-            self.stacked_widget.setCurrentWidget(self.scissors_form)
 
     def get_selected_item_data(self):
         current_form = self.stacked_widget.currentWidget()
