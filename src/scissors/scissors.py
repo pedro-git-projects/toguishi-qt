@@ -5,11 +5,11 @@ from scissors.model import ScissorsModel
 
 
 class Scissors(Item):
-    def __init__(self):
+    def __init__(self, defects):
         super().__init__()
         self._brand = ScissorsBrand.NONE
         self._model = ScissorsModel.NONE
-        self._defects = {}
+        self._defects = defects if defects else {}
 
     def __repr__(self) -> str:
         return f"Blade({self.brand!r}, {self.model!r}, {self._defects!r})"

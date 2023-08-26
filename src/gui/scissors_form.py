@@ -18,7 +18,5 @@ class ScissorsRegistrationForm(ItemFormBase):
         return dryer
 
     def get_item_data(self):
-        brand = self.brand_combobox.current_enum()
-        model = self.model_combobox.current_enum()
         defects_dict = self.parse_defects()
-        return brand, model, defects_dict
+        return defects_dict

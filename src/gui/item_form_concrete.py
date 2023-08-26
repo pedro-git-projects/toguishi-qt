@@ -7,10 +7,14 @@ from PySide6.QtWidgets import (
     QRadioButton,
     QWidget,
 )
+from blade.blade import Blade
+from dryer.dryer import Dryer
 
 from gui.blade_form import BladeRegistrationForm
 from gui.dryer_form import DryerRegistrationForm
 from gui.scissors_form import ScissorsRegistrationForm
+from item.item import Item
+from scissors.scissors import Scissors
 
 
 class ItemFormConcrete(QWidget):
@@ -77,7 +81,16 @@ class ItemFormConcrete(QWidget):
         elif item_type == "Scissors":
             self.stacked_widget.setCurrentWidget(self.scissors_form)
 
-    def get_selected_item_data(self):
+    def get_selected_item_data(self) -> Item:
         current_form = self.stacked_widget.currentWidget()
-        if isinstance(current_form, (DryerRegistrationForm, BladeRegistrationForm)):
-            return current_form.get_item_data()
+
+        if isinstance(current_form, DryerRegistrationForm):
+            return Dryer(*current_form.get_item_data())
+
+        elif isinstance(current_form, BladeRegistrationForm):
+            return Blade(*current_form.get_item_data())
+
+        elif isinstance(current_form, ScissorsRegistrationForm):
+            return Scissors(current_form.get_item_data())
+
+        raise Exception("Impossible")
