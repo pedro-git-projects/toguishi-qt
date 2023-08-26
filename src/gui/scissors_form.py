@@ -4,7 +4,8 @@ from item.item import Item
 from scissors.brand import ScissorsBrand
 from scissors.model import ScissorsModel
 
-DEFECTS = []
+DEFECTS = ["observação"]
+DEFECTS = [defect.capitalize() for defect in DEFECTS]
 
 
 class ScissorsRegistrationForm(ItemFormBase):

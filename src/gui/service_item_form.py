@@ -5,15 +5,12 @@ from PySide6.QtWidgets import (
     QLabel,
     QLineEdit,
     QRadioButton,
-    QStackedWidget,
     QVBoxLayout,
     QWidget,
 )
 
 from db.db_manager import DBManager
-from gui.blade_form import BladeRegistrationForm
-from gui.dryer_form import DryerRegistrationForm
-from gui.scissors_form import ScissorsRegistrationForm
+from gui.item_form_concrete import ItemFormConcrete
 
 from service.category import Category
 from service.payment import Payment
@@ -31,10 +28,10 @@ class ServiceItemForm(QWidget):
         self.setLayout(layout)
 
         self.setup_item_type_section(layout)
-        self.setup_stacked_widget(layout)
+        #        self.setup_stacked_widget(layout)
+        self.setup_item_form(layout)
         self.setup_category_section(layout)
         self.setup_price_section(layout)
-        self.setup_payment_section(layout)
 
     def setup_category_section(self, layout):
         self.category_label = QLabel("Categoria:")
@@ -91,16 +88,9 @@ class ServiceItemForm(QWidget):
 
         layout.addLayout(item_type_layout)
 
-    def setup_stacked_widget(self, layout):
-        self.stacked_widget = QStackedWidget()
-        self.dryer_form = DryerRegistrationForm()
-        self.blade_form = BladeRegistrationForm()
-        self.scissors_form = ScissorsRegistrationForm()
-        self.stacked_widget.addWidget(self.dryer_form)
-        self.stacked_widget.addWidget(self.blade_form)
-        self.stacked_widget.addWidget(self.scissors_form)
-
-        layout.addWidget(self.stacked_widget)
+    def setup_item_form(self, layout):
+        self.item_form = ItemFormConcrete()
+        layout.addWidget(self.item_form)
 
     def update_selected_category(self):
         selected_index = self.category_combo.currentIndex()
@@ -108,14 +98,8 @@ class ServiceItemForm(QWidget):
 
     def update_selected_item_type(self, button):
         if button == self.dryer_radio:
-            self.stacked_widget.setCurrentWidget(self.dryer_form)
+            self.item_form.set_current_item_type("Dryer")
         elif button == self.blade_radio:
-            self.stacked_widget.setCurrentWidget(self.blade_form)
+            self.item_form.set_current_item_type("Blade")
         elif button == self.scissors_radio:
-            self.stacked_widget.setCurrentWidget(self.scissors_form)
-
-    def get_selected_item_data(self):
-        current_form = self.stacked_widget.currentWidget()
-        if isinstance(current_form, (DryerRegistrationForm, BladeRegistrationForm)):
-            data = current_form.get_item_data()
-            print(data)
+            self.item_form.set_current_item_type("Scissors")
