@@ -1,3 +1,4 @@
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import (
     QComboBox,
     QLabel,
@@ -15,6 +16,8 @@ from db.db_manager import DBManager
 
 
 class CustomerRegistrationForm(QWidget):
+    customer_saved = Signal()
+
     def __init__(self, db_manager: DBManager):
         super().__init__()
 
@@ -89,24 +92,22 @@ class CustomerRegistrationForm(QWidget):
         self.selected_store = selected_store
         print("custumer form::", selected_store)
 
-    def perform_registration(self) -> Customer:
+    def perform_registration(self):
         name = self.name_edit.text()
         if self.selected_store is not None:
             store = self.selected_store
         else:
             raise Exception("Selected store is nil")
         phones = self.phones
-        customer = Customer(name, phones, store, self.db_manager)
-        id = customer.save()
+        customer = Customer(name, phones, store)
+        id = self.db_manager.insert_customer(customer)
         print(f"customer[{id}]: {customer}")
-        return customer
+        self.customer_saved.emit()
 
     def populate_store_combo(self):
         stores = self.db_manager.get_all_stores()
         for store in stores:
-            store_object = Store(
-                store["name"], store["address"], store["phones"], self.db_manager
-            )
+            store_object = Store(store["name"], store["address"], store["phones"])
             self.store_combo.addItem(store["name"], userData=store_object)
 
     # slot
