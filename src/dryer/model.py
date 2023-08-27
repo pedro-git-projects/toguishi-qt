@@ -25,6 +25,38 @@ class DryerModel(Enum, metaclass=CustomEnumMeta):
         return f"{self.__class__.__name__}.{self.name}"
 
     def __str__(self):
-        words = self.name.split("_")
-        capitalized_words = [word.capitalize() for word in words]
-        return " ".join(capitalized_words)
+        match self:
+            case DryerModel.MAXX:
+                return "Maxx"
+            case DryerModel.REX:
+                return "Rex"
+            case DryerModel.SUPER_DOIS_PONTO_ZERO:
+                return "Super 2.0"
+            case DryerModel.REVOLUTION:
+                return "Revolution"
+            case DryerModel.UNIQUE:
+                return "Unique"
+            case DryerModel.H_DOIS_OUT:
+                return "H2Out"
+            case DryerModel.TITA:
+                return "Titã"
+            case DryerModel.JET_BOX:
+                return "JetBox"
+            case DryerModel.PLENITUDE_SETE_PONTO_CINCO:
+                return "Plenitude 7.5"
+            case DryerModel.PLENITUDE_NOVE_PONTO_CINCO:
+                return "Plenitude 9.5"
+            case DryerModel.SUPER_TURBO:
+                return "Super Turbo"
+            case DryerModel.COMPACTO:
+                return "Compacto"
+            case DryerModel.MASTER:
+                return "Master"
+            case DryerModel.SUPER:
+                return "Super"
+            case DryerModel.BELLS_PLUS:
+                return "Bells Plus"
+            case DryerModel.TORNADO:
+                return "Tornado"
+            case DryerModel.SILENCIO:
+                return "Silêncio"

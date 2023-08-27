@@ -9,6 +9,8 @@ from gui.category_selector import CategorySelector
 from gui.item_form_concrete import ItemFormConcrete
 from gui.payment_widget import PaymentMethodWidget
 from gui.price_widget import PriceWidget
+from service.service_item import ServiceItem
+
 
 # remove payment method fields
 class ServiceItemForm(QWidget):
@@ -54,9 +56,9 @@ class ServiceItemForm(QWidget):
         selected_item = self.item_form.get_selected_item_data()
         initial_price = self.price_widget.get_initial_price()
         discount = self.price_widget.get_discount()
-        selected_payment_method = self.payment_method_combo.get_payment_method()
-        print(selected_category)
-        print(selected_item)
-        print(initial_price)
-        print(selected_payment_method)
-        print(discount)
+        #    selected_payment_method = self.payment_method_combo.get_payment_method()
+        service_item = ServiceItem(
+            selected_category, selected_item, initial_price, discount
+        )
+        print(service_item)
+        print(service_item.item)

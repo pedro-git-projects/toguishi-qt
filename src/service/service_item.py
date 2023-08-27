@@ -1,16 +1,21 @@
-from enum import Enum
-from typing import Type
 from decimal import Decimal
 
 from item.item import Item
+from service.category import Category
 
 
 class ServiceItem:
     def __init__(
-        self, category: Type[Enum], item: Item, inital_price: Decimal, discount: Decimal
+        self, category: Category, item: Item, inital_price: Decimal, discount: Decimal
     ):
         self.category = category
         self.item = item
         self.initial_price = inital_price
         self.discount = discount
         self.final_price = inital_price - discount
+
+    def __repr__(self) -> str:
+        return f"ServiceItem({repr(self.category)}, {repr(self.item)}, {repr(self.initial_price)}, {repr(self.discount)})"
+
+    def __str__(self) -> str:
+        return f"ServiceItem({self.category}, {self.item}, {self.initial_price}, {self.discount})"
