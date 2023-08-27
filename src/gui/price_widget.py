@@ -1,8 +1,7 @@
 from decimal import Decimal
 from PySide6.QtWidgets import QHBoxLayout, QLineEdit, QWidget
 
-
-class PriceWidget(QWidget):
+class PriceWidget(QWidget): 
     def __init__(self):
         super().__init__()
         price_layout = QHBoxLayout()

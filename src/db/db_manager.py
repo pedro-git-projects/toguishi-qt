@@ -119,8 +119,16 @@ class DBManager:
 
     def get_store_by_name(self, store_name):
         self.cursor.execute("SELECT * FROM stores WHERE name = ?", (store_name,))
-        store = self.cursor.fetchone()
-        return dict(store) if store else None
+        store_data = self.cursor.fetchone()
+
+        if store_data:
+            store_id = store_data["id"]
+            store_name = store_data["name"]
+            store_address = store_data["address"]
+            store_phones = self.get_phones_for_store(store_id)
+
+            return Store(store_name, store_address, store_phones)
+        return None
 
     def get_customer_by_name(self, customer_name):
         self.cursor.execute(

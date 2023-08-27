@@ -13,3 +13,10 @@ class ItemListWidget(QWidget):
         item_text = str(service_item)
         list_item = QListWidgetItem(item_text)
         self.list_widget.addItem(list_item)
+
+    def get_items(self):
+        items = []
+        for index in range(self.list_widget.count()):
+            list_item = self.list_widget.item(index)
+            items.append(list_item.text())
+        return items

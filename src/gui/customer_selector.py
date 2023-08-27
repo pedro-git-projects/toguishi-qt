@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QComboBox, QHBoxLayout, QWidget
+from PySide6.QtWidgets import QComboBox, QHBoxLayout, QVBoxLayout, QWidget
 from customer.customer import Customer
 
 from db.db_manager import DBManager
@@ -14,7 +14,7 @@ class CustomerSelector(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        layout = QHBoxLayout()
+        layout = QVBoxLayout()
         self.setLayout(layout)
 
         self.customer_combo = QComboBox()

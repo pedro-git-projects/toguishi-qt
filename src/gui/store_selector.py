@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QComboBox, QHBoxLayout, QWidget
+from PySide6.QtWidgets import QComboBox, QHBoxLayout, QVBoxLayout, QWidget
 
 from customer.store import Store
 from db.db_manager import DBManager
@@ -14,7 +14,7 @@ class StoreSelector(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        layout = QHBoxLayout()
+        layout = QVBoxLayout()
         self.setLayout(layout)
 
         self.store_combo = QComboBox()
@@ -32,7 +32,7 @@ class StoreSelector(QWidget):
             selected_store_name = self.store_combo.itemText(selected_index)
             store = self.db_manager.get_store_by_name(selected_store_name)
             if store:
-                return Store(store["name"], store["address"], store["phones"])
+                return Store(store.name, store.address, store.phones)
         raise Exception("Invalid store")
 
     def populate_store_combo(self):

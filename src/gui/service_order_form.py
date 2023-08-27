@@ -11,12 +11,14 @@ from db.db_manager import DBManager
 from gui.add_item_dialog import AddItemDialog
 from gui.customer_form import CustomerRegistrationForm
 from gui.customer_selector import CustomerSelector
+from gui.discount_edit import DiscountEdit
 from gui.item_list import ItemListWidget
 from gui.payment_widget import PaymentMethodWidget
 from gui.store_form import StoreForm
 from gui.store_selector import StoreSelector
 
 
+# TODO: Create on submmit button and actually instantiate an object
 class ServiceOrderForm(QWidget):
     def __init__(
         self,
@@ -33,10 +35,16 @@ class ServiceOrderForm(QWidget):
     def setup_ui(self):
         layout = QVBoxLayout()
         self.setLayout(layout)
-        self.setup_payment_method(layout)
         self.setup_selector_radios(layout)
         self.setup_stacked_widgets(layout)
+        self.setup_payment_method(layout)
         self.setup_list(layout)
+        self.setup_discount(layout)
+        self.setup_submit_button(layout)
+
+    def setup_discount(self, layout):
+        self.discount_edit = DiscountEdit()
+        layout.addWidget(self.discount_edit)
 
     def setup_list(self, layout):
         self.item_list_widget = ItemListWidget()
@@ -54,6 +62,11 @@ class ServiceOrderForm(QWidget):
     def setup_payment_method(self, layout):
         self.payment_method_combo = PaymentMethodWidget()
         layout.addWidget(self.payment_method_combo)
+
+    def setup_submit_button(self, layout):
+        self.submit_button = QPushButton("Submit")
+        layout.addWidget(self.submit_button)
+        self.submit_button.clicked.connect(self.get_service_data)
 
     def setup_selector_radios(self, layout):
         radio_layout = QHBoxLayout()
@@ -95,3 +108,20 @@ class ServiceOrderForm(QWidget):
         if selected_item:
             row = self.item_list_widget.list_widget.row(selected_item)
             self.item_list_widget.list_widget.takeItem(row)
+
+    def get_service_data(self):
+        items = self.item_list_widget.get_items()
+        payment_method = self.payment_method_combo.get_payment_method()
+
+        if self.store_radio.isChecked():
+            selected_store = self.store_combo.get_selected_store()
+            selected_customer = None
+        elif self.customer_radio.isChecked():
+            selected_customer = self.customer_combo.get_selected_customer()
+            selected_store = None
+        else:
+            selected_store = None
+            selected_customer = None
+        discount = self.discount_edit.get_discount()
+
+        print(items, payment_method, selected_store, selected_customer, discount)
