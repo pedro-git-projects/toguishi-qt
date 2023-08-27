@@ -80,8 +80,3 @@ class BladeModel(Enum, metaclass=CustomEnumMeta):
             case BladeModel.A8:
                 return "A8"
 
-
-# def __str__(self):
-#     words = self.name.split("_")
-#     capitalized_words = [word.capitalize() for word in words]
-#     return " ".join(capitalized_words)
