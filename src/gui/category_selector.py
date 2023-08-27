@@ -1,11 +1,8 @@
 from PySide6.QtWidgets import QComboBox, QLabel, QVBoxLayout, QWidget
-from PySide6.QtCore import Signal
 from service.category import Category
 
 
 class CategorySelector(QWidget):
-    category_selected = Signal(Category)
-
     def __init__(self):
         super().__init__()
 
