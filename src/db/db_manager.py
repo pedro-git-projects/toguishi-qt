@@ -96,13 +96,16 @@ class DBManager:
 
     def get_all_stores(self):
         self.cursor.execute("SELECT * FROM stores")
-        stores = self.cursor.fetchall()
+        store_rows = self.cursor.fetchall()
 
         stores_with_phones = []
-        for store_row in stores:
-            store = dict(store_row)
-            store_id = store["id"]
-            store["phones"] = self.get_phones_for_store(store_id)
+        for store_data in store_rows:
+            store_phones = self.get_phones_for_store(store_data["id"])
+            store = Store(
+                store_data["name"],
+                store_data["address"],
+                store_phones,
+            )
             stores_with_phones.append(store)
 
         return stores_with_phones

@@ -107,8 +107,8 @@ class CustomerRegistrationForm(QWidget):
     def populate_store_combo(self):
         stores = self.db_manager.get_all_stores()
         for store in stores:
-            store_object = Store(store["name"], store["address"], store["phones"])
-            self.store_combo.addItem(store["name"], userData=store_object)
+            store_object = Store(store.name, store.address, store.phones)
+            self.store_combo.addItem(store.name, userData=store_object)
 
     # slot
     def update_store_combo(self):
