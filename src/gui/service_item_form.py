@@ -1,3 +1,4 @@
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import (
     QPushButton,
     QVBoxLayout,
@@ -12,6 +13,8 @@ from service.service_item import ServiceItem
 
 
 class ServiceItemForm(QWidget):
+    submitted = Signal(ServiceItem)
+
     def __init__(self, db_manager: DBManager):
         super().__init__()
         self.db_manager = db_manager
@@ -49,9 +52,9 @@ class ServiceItemForm(QWidget):
         selected_item = self.item_form.get_selected_item_data()
         initial_price = self.price_widget.get_initial_price()
         discount = self.price_widget.get_discount()
-        #    selected_payment_method = self.payment_method_combo.get_payment_method()
         service_item = ServiceItem(
             selected_category, selected_item, initial_price, discount
         )
         print(service_item)
         print(service_item.item)
+        self.submitted.emit(service_item)

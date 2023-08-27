@@ -30,7 +30,6 @@ class ItemFormBase(QWidget):
         self.setup_brand_section(layout, brand_enum_class)
         self.setup_model_section(layout, model_enum_class)
         self.setup_defect_section(layout)
-        #        self.setup_registration_section(layout)
 
         self.defects_list.clear()
 

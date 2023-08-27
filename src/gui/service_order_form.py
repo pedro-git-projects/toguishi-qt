@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import (
+    QPushButton,
     QVBoxLayout,
     QWidget,
     QHBoxLayout,
@@ -7,8 +8,10 @@ from PySide6.QtWidgets import (
 )
 
 from db.db_manager import DBManager
+from gui.add_item_dialog import AddItemDialog
 from gui.customer_form import CustomerRegistrationForm
 from gui.customer_selector import CustomerSelector
+from gui.item_list import ItemListWidget
 from gui.payment_widget import PaymentMethodWidget
 from gui.store_form import StoreForm
 from gui.store_selector import StoreSelector
@@ -33,6 +36,20 @@ class ServiceOrderForm(QWidget):
         self.setup_payment_method(layout)
         self.setup_selector_radios(layout)
         self.setup_stacked_widgets(layout)
+        self.setup_list(layout)
+
+    def setup_list(self, layout):
+        self.item_list_widget = ItemListWidget()
+        layout.addWidget(self.item_list_widget)
+
+        self.add_item_button = QPushButton("Adicionar Item")
+        self.remove_item_button = QPushButton("Remover Item")
+
+        layout.addWidget(self.add_item_button)
+        layout.addWidget(self.remove_item_button)
+
+        self.add_item_button.clicked.connect(self.open_item_dialog)
+        self.remove_item_button.clicked.connect(self.remove_selected_item)
 
     def setup_payment_method(self, layout):
         self.payment_method_combo = PaymentMethodWidget()
@@ -68,3 +85,13 @@ class ServiceOrderForm(QWidget):
         elif self.customer_radio.isChecked():
             self.stacked_widgets.setCurrentWidget(self.customer_combo)
 
+    def open_item_dialog(self):
+        dialog = AddItemDialog(self.db_manager)
+        dialog.service_item_form.submitted.connect(self.item_list_widget.add_item)
+        dialog.exec_()
+
+    def remove_selected_item(self):
+        selected_item = self.item_list_widget.list_widget.currentItem()
+        if selected_item:
+            row = self.item_list_widget.list_widget.row(selected_item)
+            self.item_list_widget.list_widget.takeItem(row)

@@ -18,4 +18,4 @@ class ServiceItem:
         return f"ServiceItem({repr(self.category)}, {repr(self.item)}, {repr(self.initial_price)}, {repr(self.discount)})"
 
     def __str__(self) -> str:
-        return f"ServiceItem({self.category}, {self.item}, {self.initial_price}, {self.discount})"
+        return f"{str(self.category)}, {str(self.item)}, {str(self.initial_price)}, {str(self.discount)}"
