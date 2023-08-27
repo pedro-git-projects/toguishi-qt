@@ -1,5 +1,8 @@
 import sqlite3
 
+from customer.customer import Customer
+from customer.store import Store
+
 
 class DBManager:
     def __init__(self) -> None:
@@ -65,8 +68,30 @@ class DBManager:
         return store_id
 
     def get_all_customers(self):
-        self.cursor.execute("SELECT * FROM customers")
-        customers = self.cursor.fetchall()
+        self.cursor.execute(
+            """
+            SELECT customers.id, customers.name AS customer_name, stores.id AS store_id, stores.name AS store_name, stores.address AS store_address
+            FROM customers
+            LEFT JOIN stores ON customers.store_id = stores.id
+            """
+        )
+        customer_rows = self.cursor.fetchall()
+
+        customers = []
+        for customer_data in customer_rows:
+            customer_phones = self.get_phones_for_store(customer_data["store_id"])
+            store = Store(
+                customer_data["store_name"],
+                customer_data["store_address"],
+                customer_phones,
+            )
+            customer = Customer(
+                customer_data["customer_name"],
+                customer_phones,
+                store,
+            )
+            customers.append(customer)
+
         return customers
 
     def get_all_stores(self):
@@ -95,9 +120,30 @@ class DBManager:
         return dict(store) if store else None
 
     def get_customer_by_name(self, customer_name):
-        self.cursor.execute("SELECT * FROM customers WHERE name = ?", (customer_name,))
-        customer = self.cursor.fetchone()
-        return dict(customer) if customer else None
+        self.cursor.execute(
+            """
+            SELECT customers.id, customers.name AS customer_name, stores.id AS store_id, stores.name AS store_name, stores.address AS store_address
+            FROM customers
+            LEFT JOIN stores ON customers.store_id = stores.id
+            WHERE customers.name = ?
+            """,
+            (customer_name,),
+        )
+        customer_data = self.cursor.fetchone()
+
+        if customer_data:
+            customer_phones = self.get_phones_for_store(customer_data["store_id"])
+            store = Store(
+                customer_data["store_name"],
+                customer_data["store_address"],
+                customer_phones,
+            )
+            return Customer(
+                customer_data["customer_name"],
+                customer_phones,
+                store,
+            )
+        return None
 
     def __del__(self):
         self.connection.close()

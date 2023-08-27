@@ -22,7 +22,7 @@ class CustomerSelector(QWidget):
 
         customers = self.db_manager.get_all_customers()
         for customer in customers:
-            self.customer_combo.addItem(customer["name"])
+            self.customer_combo.addItem(customer.name)
 
         layout.addWidget(self.customer_label)
         layout.addWidget(self.customer_combo)
@@ -31,25 +31,15 @@ class CustomerSelector(QWidget):
         selected_index = self.customer_combo.currentIndex()
         if selected_index >= 0:
             selected_name = self.customer_combo.itemText(selected_index)
-            customer = self.db_manager.get_store_by_name(selected_name)
+            customer = self.db_manager.get_customer_by_name(selected_name)
             if customer:
-                return Customer(
-                    customer["name"],
-                    customer["phones"],
-                    customer["store"],
-                )
-        raise Exception("is fucked")
+                return customer
+        raise Exception("Customer not found or missing data")
 
     def populate_customer_combo(self):
         customers = self.db_manager.get_all_customers()
         for customer in customers:
-            customer_object = Customer(
-                customer["name"],
-                customer["phones"],
-                customer["store"],
-                self.db_manager,
-            )
-            self.customer_combo.addItem(customer["name"], userData=customer_object)
+            self.customer_combo.addItem(customer.name, userData=customer)
 
     # slot
     def update_customer_combo(self):
