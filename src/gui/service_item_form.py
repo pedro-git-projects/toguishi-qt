@@ -43,7 +43,7 @@ class ServiceItemForm(QWidget):
         layout.addWidget(self.item_form)
 
     def setup_registration_button(self, layout):
-        self.registration_button = QPushButton("Registrar")
+        self.registration_button = QPushButton("Adicionar")
         self.registration_button.clicked.connect(self.perform_registration)
         layout.addWidget(self.registration_button)
 
