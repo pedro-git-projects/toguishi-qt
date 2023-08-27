@@ -16,7 +16,7 @@ from gui.blade_form import BladeRegistrationForm
 from gui.dryer_form import DryerRegistrationForm
 
 from service.category import Category
-from service.payment import Payment
+from service.payment import PaymentMethods
 
 
 class ServiceOrderForm(QWidget):
@@ -73,7 +73,7 @@ class ServiceOrderForm(QWidget):
     def setup_payment_section(self, layout):
         self.payment_label = QLabel("Forma de pagamento:")
         self.payment_combo = QComboBox()
-        for payment in Payment:
+        for payment in PaymentMethods:
             self.payment_combo.addItem(str(payment))
 
         layout.addWidget(self.payment_label)

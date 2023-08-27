@@ -1,8 +1,5 @@
 from PySide6.QtWidgets import (
-    QComboBox,
-    QHBoxLayout,
-    QLabel,
-    QLineEdit,
+    QPushButton,
     QVBoxLayout,
     QWidget,
 )
@@ -10,10 +7,10 @@ from PySide6.QtWidgets import (
 from db.db_manager import DBManager
 from gui.category_selector import CategorySelector
 from gui.item_form_concrete import ItemFormConcrete
+from gui.payment_widget import PaymentMethodWidget
+from gui.price_widget import PriceWidget
 
-from service.payment import Payment
-
-
+# remove payment method fields
 class ServiceItemForm(QWidget):
     def __init__(self, db_manager: DBManager):
         super().__init__()
@@ -28,40 +25,38 @@ class ServiceItemForm(QWidget):
         self.setup_category_section(layout)
         self.setup_item_form(layout)
         self.setup_price_section(layout)
+        self.setup_payment_method(layout)
+        self.setup_registration_button(layout)
 
     def setup_category_section(self, layout):
         self.category_selector = CategorySelector()
         layout.addWidget(self.category_selector)
 
     def setup_price_section(self, layout):
-        price_layout = QHBoxLayout()
-
-        self.inital_price_edit = QLineEdit()
-        self.inital_price_edit.setPlaceholderText("Preço")
-
-        self.discount_edit = QLineEdit()
-        self.discount_edit.setPlaceholderText("Desconto")
-
-        price_layout.addWidget(self.inital_price_edit)
-        price_layout.addWidget(self.discount_edit)
-
-        layout.addLayout(price_layout)
-
-    def setup_payment_section(self, layout):
-        self.payment_label = QLabel("Forma de pagamento:")
-        self.payment_combo = QComboBox()
-        for payment in Payment:
-            self.payment_combo.addItem(str(payment))
-
-        layout.addWidget(self.payment_label)
-        layout.addWidget(self.payment_combo)
+        self.price_widget = PriceWidget()
+        layout.addWidget(self.price_widget)
 
     def setup_item_form(self, layout):
         self.item_form = ItemFormConcrete()
         layout.addWidget(self.item_form)
 
+    def setup_payment_method(self, layout):
+        self.payment_method_combo = PaymentMethodWidget()
+        layout.addWidget(self.payment_method_combo)
+
+    def setup_registration_button(self, layout):
+        self.registration_button = QPushButton("Registrar")
+        self.registration_button.clicked.connect(self.perform_registration)
+        layout.addWidget(self.registration_button)
+
     def perform_registration(self):
         selected_category = self.category_selector.get_selected_category()
         selected_item = self.item_form.get_selected_item_data()
+        initial_price = self.price_widget.get_initial_price()
+        discount = self.price_widget.get_discount()
+        selected_payment_method = self.payment_method_combo.get_payment_method()
         print(selected_category)
         print(selected_item)
+        print(initial_price)
+        print(selected_payment_method)
+        print(discount)
