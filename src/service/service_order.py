@@ -1,8 +1,9 @@
 from datetime import datetime
 from decimal import Decimal
 from enum import Enum
-from typing import List, Type
+from typing import List, Type, Union
 from customer.customer import Customer
+from customer.store import Store
 
 from service.service_item import ServiceItem
 
@@ -13,7 +14,7 @@ class ServiceOrder:
         items: List[ServiceItem],
         payment_method: Type[Enum],
         discount: Decimal,
-        customer: Customer,
+        client: Union[Customer, Store],
     ):
         self.date = datetime.now()
         self.items = items
@@ -27,4 +28,4 @@ class ServiceOrder:
         self.discount = discount
         self.final_price = initial_price - discount
         self.payment_method = payment_method
-        self.customer = customer
+        self.client = client

@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QComboBox, QHBoxLayout, QLabel, QWidget
+from PySide6.QtWidgets import QComboBox, QLabel, QVBoxLayout, QWidget
 
 from service.payment import PaymentMethods
 
@@ -8,7 +8,7 @@ class PaymentMethodWidget(QWidget):
         super().__init__()
         self.payment_label = QLabel("Forma de pagamento:")
         self.payment_combo = QComboBox()
-        layout = QHBoxLayout()
+        layout = QVBoxLayout()
         for payment in PaymentMethods:
             self.payment_combo.addItem(str(payment))
 

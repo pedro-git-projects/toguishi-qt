@@ -27,9 +27,6 @@ class MainWindow(QMainWindow):
         self.service_order_form = ServiceOrderForm(self.db_manager)
         self.csv_loader = CSVLoaderWidget()
 
-        self.store_form.store_saved.connect(self.customer_form.update_store_combo)
-        self.store_form.store_saved.connect(self.service_order_form.update_store_combo)
-
         tab_widget.addTab(self.store_form, "Loja")
         tab_widget.addTab(self.customer_form, "Cliente")
         tab_widget.addTab(self.service_item_form, "Item de Serviço")

@@ -7,12 +7,10 @@ from PySide6.QtWidgets import (
 from db.db_manager import DBManager
 from gui.category_selector import CategorySelector
 from gui.item_form_concrete import ItemFormConcrete
-from gui.payment_widget import PaymentMethodWidget
 from gui.price_widget import PriceWidget
 from service.service_item import ServiceItem
 
 
-# remove payment method fields
 class ServiceItemForm(QWidget):
     def __init__(self, db_manager: DBManager):
         super().__init__()
@@ -27,7 +25,6 @@ class ServiceItemForm(QWidget):
         self.setup_category_section(layout)
         self.setup_item_form(layout)
         self.setup_price_section(layout)
-        self.setup_payment_method(layout)
         self.setup_registration_button(layout)
 
     def setup_category_section(self, layout):
@@ -41,10 +38,6 @@ class ServiceItemForm(QWidget):
     def setup_item_form(self, layout):
         self.item_form = ItemFormConcrete()
         layout.addWidget(self.item_form)
-
-    def setup_payment_method(self, layout):
-        self.payment_method_combo = PaymentMethodWidget()
-        layout.addWidget(self.payment_method_combo)
 
     def setup_registration_button(self, layout):
         self.registration_button = QPushButton("Registrar")
