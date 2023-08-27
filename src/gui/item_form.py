@@ -22,17 +22,31 @@ class ItemFormBase(QWidget):
     ):
         super().__init__()
 
-        self.setWindowTitle("Registrar")
         self.defects = defects
 
         layout = QVBoxLayout()
+        self.setLayout(layout)
 
+        self.setup_brand_section(layout, brand_enum_class)
+        self.setup_model_section(layout, model_enum_class)
+        self.setup_defect_section(layout)
+        #        self.setup_registration_section(layout)
+
+        self.defects_list.clear()
+
+    def setup_brand_section(self, layout, brand_enum_class):
         self.brand_label = QLabel("Marca:")
         self.brand_combobox = CustomEnumComboBox(brand_enum_class)
+        layout.addWidget(self.brand_label)
+        layout.addWidget(self.brand_combobox)
 
+    def setup_model_section(self, layout, model_enum_class):
         self.model_label = QLabel("Modelo:")
         self.model_combobox = CustomEnumComboBox(model_enum_class)
+        layout.addWidget(self.model_label)
+        layout.addWidget(self.model_combobox)
 
+    def setup_defect_section(self, layout):
         self.has_defect_checkbox = QCheckBox("Possui defeito")
         self.has_defect_checkbox.clicked.connect(self.update_defect_ui)
 
@@ -48,15 +62,6 @@ class ItemFormBase(QWidget):
 
         self.defects_list = QListWidget()
 
-        self.register_button = QPushButton("Registrar")
-        self.register_button.clicked.connect(self.register_item)
-
-        layout.addWidget(self.brand_label)
-        layout.addWidget(self.brand_combobox)
-
-        layout.addWidget(self.model_label)
-        layout.addWidget(self.model_combobox)
-
         layout.addWidget(self.has_defect_checkbox)
         layout.addWidget(self.defect_key_combobox)
         layout.addWidget(self.defect_description_edit)
@@ -64,11 +69,10 @@ class ItemFormBase(QWidget):
         layout.addWidget(self.remove_defect_button)
         layout.addWidget(self.defects_list)
 
+    def setup_registration_section(self, layout):
+        self.register_button = QPushButton("Registrar")
+        self.register_button.clicked.connect(self.register_item)
         layout.addWidget(self.register_button)
-
-        self.setLayout(layout)
-
-        self.defects_list.clear()
 
     def add_defect(self):
         if self.has_defect_checkbox.isChecked():

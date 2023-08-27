@@ -1,7 +1,7 @@
 from enum import Enum, auto
 
 
-class Payment(Enum):
+class PaymentMethods(Enum):
     DINHEIRO = auto()
     PIX_PF = auto()
     PIX_PJ = auto()

@@ -19,25 +19,32 @@ class CustomerRegistrationForm(QWidget):
         super().__init__()
 
         self.db_manager = db_manager
-
         self.phones = []
         self.selected_store = None
 
         layout = QVBoxLayout()
         self.setLayout(layout)
 
-        self.sotore_label = QLabel("Loja:")
-        layout.addWidget(self.sotore_label)
+        self.setup_store_section(layout)
+        self.setup_name_section(layout)
+        self.setup_phone_section(layout)
+        self.setup_registration_section(layout)
+
+    def setup_store_section(self, layout):
+        self.store_label = QLabel("Loja:")
+        layout.addWidget(self.store_label)
 
         self.store_combo = QComboBox()
         self.populate_store_combo()
         self.store_combo.currentIndexChanged.connect(self.update_selected_store)
         layout.addWidget(self.store_combo)
 
+    def setup_name_section(self, layout):
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("Nome")
         layout.addWidget(self.name_edit)
 
+    def setup_phone_section(self, layout):
         self.phone_edit = QLineEdit()
         self.phone_edit.setPlaceholderText("(DDD)XXXXXXXX")
         layout.addWidget(self.phone_edit)
@@ -53,6 +60,7 @@ class CustomerRegistrationForm(QWidget):
         self.phone_list = QListWidget()
         layout.addWidget(self.phone_list)
 
+    def setup_registration_section(self, layout):
         self.perform_registration_button = QPushButton("Cadastrar cliente")
         self.perform_registration_button.clicked.connect(self.perform_registration)
         layout.addWidget(self.perform_registration_button)
