@@ -70,8 +70,8 @@ class StoreForm(QWidget):
         address = self.address_edit.text()
         phones = self.phones
         print("StoreForm1::", phones)
-        store = Store(name, address, phones, self.db_manager)
+        store = Store(name, address, phones)
         print("StoreForm2::", phones)
-        id = store.save()
+        id = self.db_manager.insert_store(store) 
         print(f"loja[{id}]: {store}")
         self.store_saved.emit()

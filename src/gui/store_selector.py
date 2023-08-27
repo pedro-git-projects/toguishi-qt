@@ -33,17 +33,13 @@ class StoreSelector(QWidget):
             selected_store_name = self.store_combo.itemText(selected_index)
             store = self.db_manager.get_store_by_name(selected_store_name)
             if store:
-                return Store(
-                    store["name"], store["address"], store["phones"], self.db_manager
-                )
+                return Store(store["name"], store["address"], store["phones"])
         raise Exception("is fucked")
 
     def populate_store_combo(self):
         stores = self.db_manager.get_all_stores()
         for store in stores:
-            store_object = Store(
-                store["name"], store["address"], store["phones"], self.db_manager
-            )
+            store_object = Store(store["name"], store["address"], store["phones"])
             self.store_combo.addItem(store["name"], userData=store_object)
 
     # slot
