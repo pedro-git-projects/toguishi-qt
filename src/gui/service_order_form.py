@@ -1,6 +1,9 @@
 from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
+    QHBoxLayout,
+    QRadioButton,
+    QStackedWidget,
 )
 
 from db.db_manager import DBManager
@@ -28,17 +31,40 @@ class ServiceOrderForm(QWidget):
         layout = QVBoxLayout()
         self.setLayout(layout)
         self.setup_payment_method(layout)
-        self.setup_store_combo(layout)
-        self.setup_customer_combo(layout)
+        self.setup_selector_radios(layout)
+        self.setup_stacked_widgets(layout)
 
     def setup_payment_method(self, layout):
         self.payment_method_combo = PaymentMethodWidget()
         layout.addWidget(self.payment_method_combo)
 
-    def setup_store_combo(self, layout):
-        self.store_combo = StoreSelector(self.db_manager, self.store_form)
-        layout.addWidget(self.store_combo)
+    def setup_selector_radios(self, layout):
+        radio_layout = QHBoxLayout()
+        self.store_radio = QRadioButton("Loja")
+        self.customer_radio = QRadioButton("Cliente")
+        self.store_radio.toggled.connect(self.handle_radio_toggled)
+        self.customer_radio.toggled.connect(self.handle_radio_toggled)
 
-    def setup_customer_combo(self, layout):
+        radio_layout.addWidget(self.store_radio)
+        radio_layout.addWidget(self.customer_radio)
+        layout.addLayout(radio_layout)
+
+    def setup_stacked_widgets(self, layout):
+        self.stacked_widgets = QStackedWidget()
+
+        self.store_combo = StoreSelector(self.db_manager, self.store_form)
         self.customer_combo = CustomerSelector(self.db_manager, self.customer_form)
-        layout.addWidget(self.customer_combo)
+
+        self.stacked_widgets.addWidget(self.store_combo)
+        self.stacked_widgets.addWidget(self.customer_combo)
+
+        layout.addWidget(self.stacked_widgets)
+
+        self.stacked_widgets.setCurrentWidget(self.store_combo)
+
+    def handle_radio_toggled(self):
+        if self.store_radio.isChecked():
+            self.stacked_widgets.setCurrentWidget(self.store_combo)
+        elif self.customer_radio.isChecked():
+            self.stacked_widgets.setCurrentWidget(self.customer_combo)
+

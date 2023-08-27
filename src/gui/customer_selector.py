@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QComboBox, QLabel, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QComboBox, QHBoxLayout, QWidget
 from customer.customer import Customer
 
 from db.db_manager import DBManager
@@ -14,17 +14,15 @@ class CustomerSelector(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
         self.setLayout(layout)
 
-        self.customer_label = QLabel("Cliente:")
         self.customer_combo = QComboBox()
 
         customers = self.db_manager.get_all_customers()
         for customer in customers:
             self.customer_combo.addItem(customer.name)
 
-        layout.addWidget(self.customer_label)
         layout.addWidget(self.customer_combo)
 
     def get_selected_customer(self) -> Customer:
