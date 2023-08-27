@@ -109,6 +109,7 @@ class CustomerRegistrationForm(QWidget):
             )
             self.store_combo.addItem(store["name"], userData=store_object)
 
+    # slot
     def update_store_combo(self):
         self.store_combo.clear()
         self.populate_store_combo()

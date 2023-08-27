@@ -24,8 +24,13 @@ class MainWindow(QMainWindow):
         self.store_form = StoreForm(self.db_manager)
         self.customer_form = CustomerRegistrationForm(self.db_manager)
         self.service_item_form = ServiceItemForm(self.db_manager)
-        self.service_order_form = ServiceOrderForm(self.db_manager)
+        self.service_order_form = ServiceOrderForm(self.db_manager, self.store_form)
         self.csv_loader = CSVLoaderWidget()
+
+        self.store_form.store_saved.connect(self.customer_form.update_store_combo)
+        self.store_form.store_saved.connect(
+            self.service_order_form.store_combo.update_store_combo
+        )
 
         tab_widget.addTab(self.store_form, "Loja")
         tab_widget.addTab(self.customer_form, "Cliente")

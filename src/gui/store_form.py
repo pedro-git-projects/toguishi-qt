@@ -69,9 +69,9 @@ class StoreForm(QWidget):
         name = self.name_edit.text()
         address = self.address_edit.text()
         phones = self.phones
-        print("StoreForm1::", phones)  # Add this line to check the phones before saving
+        print("StoreForm1::", phones)
         store = Store(name, address, phones, self.db_manager)
-        print("StoreForm2::", phones)  # Add this line to check the phones before saving
+        print("StoreForm2::", phones)
         id = store.save()
         print(f"loja[{id}]: {store}")
         self.store_saved.emit()
