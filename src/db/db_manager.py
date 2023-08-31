@@ -46,7 +46,15 @@ class DBManager:
         self.connection.commit()
 
     def insert_customer(self, customer):
-        self.cursor.execute("INSERT INTO customers (name) VALUES (?)", (customer.name,))
+        store = customer.store
+        store_id = self.get_store_id_by_name(store.name)
+        self.cursor.execute(
+            """
+            INSERT INTO customers (name, store_id)
+            VALUES (?, ?)
+            """,
+            (customer.name, store_id),
+        )
         customer_id = self.cursor.lastrowid
         self.connection.commit()
         return customer_id
@@ -116,6 +124,19 @@ class DBManager:
         )
         phones = self.cursor.fetchall()
         return [phone["phone_number"] for phone in phones]
+
+    def get_store_id_by_name(self, store_name):
+        self.cursor.execute(
+            """
+            SELECT id FROM stores WHERE name = ?
+            """,
+            (store_name,),
+        )
+        store_data = self.cursor.fetchone()
+
+        if store_data:
+            return store_data["id"]
+        return None
 
     def get_store_by_name(self, store_name):
         self.cursor.execute("SELECT * FROM stores WHERE name = ?", (store_name,))

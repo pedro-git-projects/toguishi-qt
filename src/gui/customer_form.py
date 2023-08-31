@@ -90,7 +90,6 @@ class CustomerRegistrationForm(QWidget):
     def update_selected_store(self, index):
         selected_store = self.store_combo.itemData(index)
         self.selected_store = selected_store
-        print("custumer form::", selected_store)
 
     def perform_registration(self):
         name = self.name_edit.text()
