@@ -18,7 +18,7 @@ from gui.store_form import StoreForm
 from gui.store_selector import StoreSelector
 
 
-# TODO: Create on submmit button and actually instantiate an object
+# TODO: Check for phone joins in store database
 class ServiceOrderForm(QWidget):
     def __init__(
         self,
@@ -123,5 +123,6 @@ class ServiceOrderForm(QWidget):
             selected_store = None
             selected_customer = None
         discount = self.discount_edit.get_discount()
-
+        print("SELECTED STORE::", selected_store)
+        print("SELECTED CUSTOMER::", selected_customer)
         print(items, payment_method, selected_store, selected_customer, discount)

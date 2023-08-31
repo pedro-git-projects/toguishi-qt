@@ -15,5 +15,7 @@ class DiscountEdit(QWidget):
         self.setLayout(price_layout)
 
     def get_discount(self) -> Decimal:
-        discount = Decimal(self.discount_edit.text())
-        return discount
+        discount = Decimal(0)
+        if self.discount_edit.text() == "":
+            return discount
+        return Decimal(self.discount_edit.text())

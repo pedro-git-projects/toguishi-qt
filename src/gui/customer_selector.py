@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QComboBox, QHBoxLayout, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QComboBox, QVBoxLayout, QWidget
 from customer.customer import Customer
 
 from db.db_manager import DBManager
