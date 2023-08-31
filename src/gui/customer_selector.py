@@ -20,8 +20,12 @@ class CustomerSelector(QWidget):
         self.customer_combo = QComboBox()
 
         customers = self.db_manager.get_all_customers()
-        for customer in customers:
-            self.customer_combo.addItem(customer.name)
+        if customers:
+            self.customer_combo.setCurrentIndex(0)
+            for customer in customers:
+                self.customer_combo.addItem(customer.name, userData=customer)
+        else:
+            self.customer_combo.addItem("No customers found")
 
         layout.addWidget(self.customer_combo)
 

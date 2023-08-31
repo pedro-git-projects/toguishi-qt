@@ -14,8 +14,12 @@ class CategorySelector(QWidget):
 
         self.category_label = QLabel("Categoria:")
         self.category_combo = QComboBox()
-        for category in Category:
-            self.category_combo.addItem(str(category))
+
+        categories = list(Category)
+        if categories:
+            self.category_combo.setCurrentIndex(0)
+            for category in categories:
+                self.category_combo.addItem(str(category))
 
         layout.addWidget(self.category_label)
         layout.addWidget(self.category_combo)
