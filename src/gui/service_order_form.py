@@ -64,7 +64,7 @@ class ServiceOrderForm(QWidget):
         layout.addWidget(self.payment_method_combo)
 
     def setup_submit_button(self, layout):
-        self.submit_button = QPushButton("Submit")
+        self.submit_button = QPushButton("Registrar")
         layout.addWidget(self.submit_button)
         self.submit_button.clicked.connect(self.get_service_data)
 

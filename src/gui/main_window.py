@@ -4,6 +4,7 @@ from gui.csv_loader import CSVLoaderWidget
 
 from gui.customer_form import CustomerRegistrationForm
 from gui.service_order_form import ServiceOrderForm
+# from gui.service_visualizer import ServiceOrdersWidget
 from gui.store_form import StoreForm
 
 
@@ -26,6 +27,7 @@ class MainWindow(QMainWindow):
             self.db_manager, self.store_form, self.customer_form
         )
         self.csv_loader = CSVLoaderWidget()
+ #       self.service_visualizer = ServiceOrdersWidget(self.db_manager) 
 
         self.store_form.store_saved.connect(self.customer_form.update_store_combo)
         self.store_form.store_saved.connect(
@@ -39,6 +41,7 @@ class MainWindow(QMainWindow):
         tab_widget.addTab(self.customer_form, "Cliente")
         tab_widget.addTab(self.service_order_form, "Ordem de Serviço")
         tab_widget.addTab(self.csv_loader, "Carregar CSV")
+ #       tab_widget.addTab(self.service_visualizer, "Visualizar Serviço")
 
         layout = QVBoxLayout()
         layout.addWidget(tab_widget)
