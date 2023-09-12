@@ -1,0 +1,1719 @@
+{
+    "initial": {
+        "diagrams": [
+            {
+                "id": "1694534961871",
+                "items": [
+                    {
+                        "id": "1694534961912",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 469,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962134",
+                        "appearance": {
+                            "BACKGROUND_COLOR": 2434341,
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT": "Loja*,Cliente,Ordem de Serviço, Carregar CSV",
+                            "TEXT_ALIGNMENT": "center",
+                            "FONT_SIZE": 16,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TAB_COLOR": 15790320,
+                            "TAB_ALIGNMENT": "Left",
+                            "TAB_POSITION": "Top"
+                        },
+                        "renderer": "Tabs",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 469,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962285",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Nome"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 550.5,
+                            "y": 191,
+                            "w": 511,
+                            "h": 54,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962308",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Endereço"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 550.5,
+                            "y": 279,
+                            "w": 511,
+                            "h": 54,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962318",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "(DDD)XXXXXXXX"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 550.5,
+                            "y": 369,
+                            "w": 511,
+                            "h": 54,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962588",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Adicionar Telefone"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 550.5,
+                            "y": 444,
+                            "w": 511,
+                            "h": 34,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962644",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Remover Telefone"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 550.5,
+                            "y": 502,
+                            "w": 511,
+                            "h": 34,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962788",
+                        "appearance": {
+                            "ACCENT_COLOR": 2191797,
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "(61)99223145\n(61)99223143*\n(61)99221102"
+                        },
+                        "renderer": "List",
+                        "transform": {
+                            "x": 550.5,
+                            "y": 635.5,
+                            "w": 421,
+                            "h": 157,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534962912",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Cadastrar Loja"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 550,
+                            "y": 769,
+                            "w": 338,
+                            "h": 34,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    }
+                ],
+                "rootIds": [
+                    "1694534961912",
+                    "1694534962134",
+                    "1694534962285",
+                    "1694534962308",
+                    "1694534962318",
+                    "1694534962588",
+                    "1694534962644",
+                    "1694534962788",
+                    "1694534962912"
+                ],
+                "title": "Loja"
+            },
+            {
+                "id": "1694534963768",
+                "items": [
+                    {
+                        "id": "1694534963776",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 441,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534963777",
+                        "appearance": {
+                            "BACKGROUND_COLOR": 2434341,
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT": "Loja,Cliente*,Ordem de Serviço, Carregar CSV",
+                            "TEXT_ALIGNMENT": "center",
+                            "FONT_SIZE": 16,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TAB_COLOR": 15790320,
+                            "TAB_ALIGNMENT": "Left",
+                            "TAB_POSITION": "Top"
+                        },
+                        "renderer": "Tabs",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 441,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534963780",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "(DDD)XXXXXXXX"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 341,
+                            "w": 511,
+                            "h": 54,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534963781",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Adicionar Telefone"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 416,
+                            "w": 511,
+                            "h": 34,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534963782",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Remover Telefone"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 474,
+                            "w": 511,
+                            "h": 34,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534963783",
+                        "appearance": {
+                            "ACCENT_COLOR": 2191797,
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "(61)99223145\n(61)99223143*\n(61)99221102"
+                        },
+                        "renderer": "List",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 607.5,
+                            "w": 421,
+                            "h": 157,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534963784",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Cadastrar Cliente"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 497,
+                            "y": 741,
+                            "w": 338,
+                            "h": 34,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534964456",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Loja:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 271,
+                            "y": 145,
+                            "w": 46,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534964619",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Petz"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 497,
+                            "y": 194,
+                            "w": 498,
+                            "h": 52,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534964745",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Nome"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 272,
+                            "w": 501,
+                            "h": 52,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    }
+                ],
+                "rootIds": [
+                    "1694534963776",
+                    "1694534963777",
+                    "1694534963780",
+                    "1694534963781",
+                    "1694534963782",
+                    "1694534963783",
+                    "1694534963784",
+                    "1694534964456",
+                    "1694534964619",
+                    "1694534964745"
+                ],
+                "title": "Cliente"
+            },
+            {
+                "id": "1694534964978",
+                "items": [
+                    {
+                        "id": "1694534964990",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 501.5,
+                            "y": 430,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534964991",
+                        "appearance": {
+                            "BACKGROUND_COLOR": 2434341,
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT": "Loja,Cliente,Ordem de Serviço*, Carregar CSV",
+                            "TEXT_ALIGNMENT": "center",
+                            "FONT_SIZE": 16,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TAB_COLOR": 15790320,
+                            "TAB_ALIGNMENT": "Left",
+                            "TAB_POSITION": "Top"
+                        },
+                        "renderer": "Tabs",
+                        "transform": {
+                            "x": 501.5,
+                            "y": 430,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534965477",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Loja",
+                            "STATE": "Checked"
+                        },
+                        "renderer": "RadioButton",
+                        "transform": {
+                            "x": 377,
+                            "y": 128,
+                            "w": 62,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534965487",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Cliente",
+                            "STATE": "Normal"
+                        },
+                        "renderer": "RadioButton",
+                        "transform": {
+                            "x": 652,
+                            "y": 128,
+                            "w": 182,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534965754",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Petz"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 501,
+                            "y": 196.5,
+                            "w": 310,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534965788",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Forma de Pagamento:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 424,
+                            "y": 251,
+                            "w": 376,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534965876",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Dinheiro"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 501,
+                            "y": 296.5,
+                            "w": 310,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534966007",
+                        "appearance": {
+                            "ACCENT_COLOR": 2191797,
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "item1\nitem2\nitem3*\nitem4"
+                        },
+                        "renderer": "List",
+                        "transform": {
+                            "x": 501.5,
+                            "y": 449,
+                            "w": 265,
+                            "h": 142,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534966046",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Adicionar Item"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 502,
+                            "y": 552.5,
+                            "w": 334,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534966102",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Remover Item"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 502,
+                            "y": 601.5,
+                            "w": 334,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534966184",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Desconto"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 501.5,
+                            "y": 676.5,
+                            "w": 221,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534966244",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Registrar"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 501.5,
+                            "y": 733.5,
+                            "w": 221,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    }
+                ],
+                "rootIds": [
+                    "1694534964990",
+                    "1694534964991",
+                    "1694534965477",
+                    "1694534965487",
+                    "1694534965754",
+                    "1694534965788",
+                    "1694534965876",
+                    "1694534966007",
+                    "1694534966046",
+                    "1694534966102",
+                    "1694534966184",
+                    "1694534966244"
+                ],
+                "title": "Ordem de Serviço"
+            },
+            {
+                "id": "1694534967807",
+                "items": [
+                    {
+                        "id": "1694534967817",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 439,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967818",
+                        "appearance": {
+                            "BACKGROUND_COLOR": 2434341,
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT": "Loja,Cliente,Ordem de Serviço*, Carregar CSV",
+                            "TEXT_ALIGNMENT": "center",
+                            "FONT_SIZE": 16,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TAB_COLOR": 15790320,
+                            "TAB_ALIGNMENT": "Left",
+                            "TAB_POSITION": "Top"
+                        },
+                        "renderer": "Tabs",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 439,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967819",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Loja",
+                            "STATE": "Checked"
+                        },
+                        "renderer": "RadioButton",
+                        "transform": {
+                            "x": 373,
+                            "y": 137,
+                            "w": 62,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967820",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Cliente",
+                            "STATE": "Normal"
+                        },
+                        "renderer": "RadioButton",
+                        "transform": {
+                            "x": 598,
+                            "y": 137,
+                            "w": 82,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967821",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Petz"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 497,
+                            "y": 205.5,
+                            "w": 310,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967822",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Forma de Pagamento:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 317,
+                            "y": 260,
+                            "w": 170,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967823",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Dinheiro"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 497,
+                            "y": 305.5,
+                            "w": 310,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967824",
+                        "appearance": {
+                            "ACCENT_COLOR": 2191797,
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "item1\nitem2\nitem3*\nitem4"
+                        },
+                        "renderer": "List",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 458,
+                            "w": 265,
+                            "h": 142,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967825",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Adicionar Item"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 498,
+                            "y": 561.5,
+                            "w": 334,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967826",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Remover Item"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 498,
+                            "y": 610.5,
+                            "w": 334,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967827",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Desconto"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 685.5,
+                            "w": 221,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534967828",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Registrar"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 497.5,
+                            "y": 742.5,
+                            "w": 221,
+                            "h": 33,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968463",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 725,
+                            "y": 438,
+                            "w": 380,
+                            "h": 690,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968609",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Categoria:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 617,
+                            "y": 116,
+                            "w": 164,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968639",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Reparo"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 741.5,
+                            "y": 146,
+                            "w": 267,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968722",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Lâmina",
+                            "STATE": "Normal"
+                        },
+                        "renderer": "Checkbox",
+                        "transform": {
+                            "x": 670,
+                            "y": 196,
+                            "w": 144,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968756",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Sporador",
+                            "STATE": "Checked"
+                        },
+                        "renderer": "Checkbox",
+                        "transform": {
+                            "x": 800,
+                            "y": 196,
+                            "w": 198,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968822",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Tesoura",
+                            "STATE": "Normal"
+                        },
+                        "renderer": "Checkbox",
+                        "transform": {
+                            "x": 906,
+                            "y": 196,
+                            "w": 198,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968928",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Marca:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 615,
+                            "y": 245,
+                            "w": 116,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534968983",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Kyklon"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 730.5,
+                            "y": 285,
+                            "w": 267,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969017",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Modelo:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 622,
+                            "y": 332,
+                            "w": 130,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969113",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Maxx"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 730.5,
+                            "y": 367,
+                            "w": 267,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969323",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Possui defeito",
+                            "STATE": "Normal"
+                        },
+                        "renderer": "Checkbox",
+                        "transform": {
+                            "x": 702.5,
+                            "y": 405,
+                            "w": 273,
+                            "h": 36,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969365",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Carcaça"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 730.5,
+                            "y": 444,
+                            "w": 267,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969409",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Adicionar Defeito"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 730.5,
+                            "y": 494,
+                            "w": 309,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969445",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Remover Defeito"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 730.5,
+                            "y": 535,
+                            "w": 309,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534969531",
+                        "appearance": {
+                            "ACCENT_COLOR": 2191797,
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "defeito*\noutro defeito"
+                        },
+                        "renderer": "List",
+                        "transform": {
+                            "x": 731,
+                            "y": 602,
+                            "w": 228,
+                            "h": 82,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534971090",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Preço"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 641,
+                            "y": 681,
+                            "w": 100,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534971095",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "Desconto"
+                        },
+                        "renderer": "TextInput",
+                        "transform": {
+                            "x": 814,
+                            "y": 684,
+                            "w": 100,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534971319",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Adicionar Item"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 729.5,
+                            "y": 736,
+                            "w": 155,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    }
+                ],
+                "rootIds": [
+                    "1694534967817",
+                    "1694534967818",
+                    "1694534967819",
+                    "1694534967820",
+                    "1694534967821",
+                    "1694534967822",
+                    "1694534967823",
+                    "1694534967824",
+                    "1694534967825",
+                    "1694534967826",
+                    "1694534967827",
+                    "1694534967828",
+                    "1694534968463",
+                    "1694534968609",
+                    "1694534968639",
+                    "1694534968722",
+                    "1694534968756",
+                    "1694534968822",
+                    "1694534968928",
+                    "1694534968983",
+                    "1694534969017",
+                    "1694534969113",
+                    "1694534969323",
+                    "1694534969365",
+                    "1694534969409",
+                    "1694534969445",
+                    "1694534969531",
+                    "1694534971090",
+                    "1694534971095",
+                    "1694534971319"
+                ],
+                "title": "Adicionar Item"
+            },
+            {
+                "id": "1694534971394",
+                "items": [
+                    {
+                        "id": "1694534971404",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 493.5,
+                            "y": 439,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534971405",
+                        "appearance": {
+                            "BACKGROUND_COLOR": 2434341,
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT": "Loja,Cliente,Ordem de Serviço, Carregar CSV*",
+                            "TEXT_ALIGNMENT": "center",
+                            "FONT_SIZE": 16,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TAB_COLOR": 15790320,
+                            "TAB_ALIGNMENT": "Left",
+                            "TAB_POSITION": "Top"
+                        },
+                        "renderer": "Tabs",
+                        "transform": {
+                            "x": 493.5,
+                            "y": 439,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534971987",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Carregar CSV"
+                        },
+                        "renderer": "Button",
+                        "transform": {
+                            "x": 493,
+                            "y": 284.5,
+                            "w": 148,
+                            "h": 39,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    }
+                ],
+                "rootIds": [
+                    "1694534971404",
+                    "1694534971405",
+                    "1694534971987"
+                ],
+                "title": "CSV"
+            },
+            {
+                "id": "1694534972141",
+                "items": [
+                    {
+                        "id": "1694534972149",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT_DISABLED": true
+                        },
+                        "renderer": "Window",
+                        "transform": {
+                            "x": 496.5,
+                            "y": 430,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534972150",
+                        "appearance": {
+                            "BACKGROUND_COLOR": 2434341,
+                            "FOREGROUND_COLOR": 16777215,
+                            "TEXT": "Loja,Cliente,Ordem de Serviço, Carregar CSV,Consultas*",
+                            "TEXT_ALIGNMENT": "center",
+                            "FONT_SIZE": 16,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TAB_COLOR": 15790320,
+                            "TAB_ALIGNMENT": "Left",
+                            "TAB_POSITION": "Top"
+                        },
+                        "renderer": "Tabs",
+                        "transform": {
+                            "x": 496.5,
+                            "y": 430,
+                            "w": 941,
+                            "h": 722,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534972480",
+                        "appearance": {
+                            "FOREGROUND_COLOR": "#fff",
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "Loja/Cliente,Items,Venda\nrow1,row1,row1\nrow2,row2",
+                            "HEADER_BACKGROUND_COLOR": 15790320,
+                            "HEADER_FOREGROUND_COLOR": 2434341,
+                            "HEADER_HIDDEN": false
+                        },
+                        "renderer": "Grid",
+                        "transform": {
+                            "x": 514.5,
+                            "y": 430.5,
+                            "w": 709,
+                            "h": 347,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534972674",
+                        "appearance": {
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "TEXT": "Filtrar por:"
+                        },
+                        "renderer": "Label",
+                        "transform": {
+                            "x": 202,
+                            "y": 130,
+                            "w": 84,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    },
+                    {
+                        "id": "1694534972704",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 15790320,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 2434341,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "left",
+                            "TEXT": "ComboBox"
+                        },
+                        "renderer": "ComboBox",
+                        "transform": {
+                            "x": 230,
+                            "y": 173,
+                            "w": 140,
+                            "h": 30,
+                            "r": 0
+                        },
+                        "type": "Shape"
+                    }
+                ],
+                "rootIds": [
+                    "1694534972149",
+                    "1694534972150",
+                    "1694534972480",
+                    "1694534972674",
+                    "1694534972704"
+                ],
+                "title": "Consultas"
+            }
+        ],
+        "diagramIds": [
+            "1694534961871",
+            "1694534963768",
+            "1694534964978",
+            "1694534967807",
+            "1694534971394",
+            "1694534972141"
+        ],
+        "id": "a6697a60-0043-f947-9e08-98743418309e",
+        "size": {
+            "x": 1000,
+            "y": 1000
+        }
+    },
+    "actions": [
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1694534961871",
+                "timestamp": 1694537201217,
+                "oldBounds": {
+                    "x": 497.5,
+                    "y": 469,
+                    "w": 941,
+                    "h": 722,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 492.5,
+                    "y": 420,
+                    "w": 941,
+                    "h": 722,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1694534961912",
+                    "1694534962134",
+                    "1694534962285",
+                    "1694534962308",
+                    "1694534962318",
+                    "1694534962588",
+                    "1694534962644",
+                    "1694534962788",
+                    "1694534962912"
+                ]
+            }
+        },
+        {
+            "type": "items/align",
+            "payload": {
+                "diagramId": "1694534961871",
+                "timestamp": 1694537215516,
+                "mode": "ALIGN_H_CENTER",
+                "itemIds": [
+                    "1694534962285",
+                    "1694534962308",
+                    "1694534962318",
+                    "1694534962588",
+                    "1694534962644",
+                    "1694534962788",
+                    "1694534962912",
+                    "1694534962134"
+                ]
+            }
+        },
+        {
+            "type": "items/align",
+            "payload": {
+                "diagramId": "1694534963768",
+                "timestamp": 1694537231968,
+                "mode": "ALIGN_H_CENTER",
+                "itemIds": [
+                    "1694534964456",
+                    "1694534964619",
+                    "1694534963780",
+                    "1694534963781",
+                    "1694534963782",
+                    "1694534963783",
+                    "1694534963784",
+                    "1694534963777"
+                ]
+            }
+        },
+        {
+            "type": "items/align",
+            "payload": {
+                "diagramId": "1694534964978",
+                "timestamp": 1694537250124,
+                "mode": "ALIGN_H_CENTER",
+                "itemIds": [
+                    "1694534965477",
+                    "1694534965487",
+                    "1694534965754",
+                    "1694534965788",
+                    "1694534965876",
+                    "1694534966007",
+                    "1694534966046",
+                    "1694534966102",
+                    "1694534966184",
+                    "1694534966244",
+                    "1694534964991"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1694534964978",
+                "timestamp": 1694537261875,
+                "oldBounds": {
+                    "x": 501,
+                    "y": 128,
+                    "w": 182,
+                    "h": 36,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 636,
+                    "y": 128,
+                    "w": 182,
+                    "h": 36,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1694534965487"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1694534964978",
+                "timestamp": 1694537264731,
+                "oldBounds": {
+                    "x": 501,
+                    "y": 128,
+                    "w": 62,
+                    "h": 36,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 377,
+                    "y": 128,
+                    "w": 62,
+                    "h": 36,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1694534965477"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1694534964978",
+                "timestamp": 1694537267810,
+                "oldBounds": {
+                    "x": 636,
+                    "y": 128,
+                    "w": 182,
+                    "h": 36,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 667,
+                    "y": 128,
+                    "w": 182,
+                    "h": 36,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1694534965487"
+                ]
+            }
+        }
+    ]
+}
